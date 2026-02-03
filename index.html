@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    .save{
+        background-color: aqua;
+    }
+    .save:hover{
+        background-color: bisque;
+    }
+.link:visited{
+    color: blueviolet;
+
+}
+.username:focus{
+    background-color: cadetblue;
+}
+
+.title::before{
+    content: "Mian";
+    color: chocolate;
+
+}
+.title::after{
+    content: "G";
+    color: aquamarine;
+}
+.container{
+    height: 100px;
+    width: 100px ;
+    background-color: darkcyan;
+    padding-top:10px ;
+    padding-left: 20px;
+
+    border: 5px;
+    border-color: darkolivegreen;
+    border-style: groove;
+    border-radius: 10px;
+    margin: 20px 20px 100px 30px ;
+    
+
+}
+.container1{
+    background-color: blueviolet;
+    height: 100px;
+    width: 100px;
+    margin-bottom:10px ;
+    border-style:dotted ;
+
+}
+.container2{
+    background-color: burlywood;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 10px;
+    border-style: inset;
+}
+.container3{
+    background-color: rgb(156, 135, 176);
+    height: 100px;
+    width: 100px;
+    margin-bottom: 10px;
+    border-style: double;
+}
+.container4{
+    background-color: rgb(43, 226, 156);
+    height: 100px;
+    width: 100px;
+    margin-bottom: 10px;
+    border-style: dashed;
+}
+
+    </style>
+
+</head>
+<body>
+
+    <h1>pseudo,classes,Box Model, elements</h1>
+   <button class="save">save</button>
+   <a href="https://www.w3schools.com/css/default.asp" class="link">W3 school</a>
+   <input type="text" class="username" placeholder="enter name">
+    <h2 class="title">Awais</h2>
+    <div class="container"> Mian Awais</div>
+
+    <img class="container1" src="./image.png"></img>
+    <div class="container2"></div>
+    <div class="container3"></div>
+    <div class="container4"></div>
+</body>
+</html>
