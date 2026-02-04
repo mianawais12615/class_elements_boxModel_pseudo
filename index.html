@@ -74,6 +74,22 @@
     border-style: dashed;
 }
 
+.meal-img{
+    width: 100px;
+    height: 100px;
+}
+.card:hover{
+    border: 3px rgb(9, 9, 9) solid;
+    height: 200px;
+    width:200px ;
+    padding-left: 30px;
+    margin-bottom: 5px;
+    background-color: bisque;
+    margin-top: 5px;
+
+
+}
+
     </style>
 
 </head>
@@ -90,5 +106,53 @@
     <div class="container2"></div>
     <div class="container3"></div>
     <div class="container4"></div>
+
+    <form onsubmit="
+    searchMeal()
+    return false">
+
+        <input type="text" name="mealName" id="mealName">
+        <button>search</button>
+
+    </form>
+
+    <div id="meal-show"></div>
+    <script>
+        async function searchMeal() {
+            try{
+                const mealFromAPI = document.querySelector("#mealName")
+                const meal = mealFromAPI.value
+                
+                const mealsAPI = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`,     
+                );
+                const dataFromAPI = await mealsAPI.json();
+               const mealFrom = dataFromAPI.meals
+
+               const mealsShowRef = document.querySelector("#meal-show")
+               mealsShowRef.innerHTML = "";
+
+               mealFrom.map((ml) =>{
+                mealsShowRef.innerHTML =
+                mealsShowRef.innerHTML +
+                `
+                <div class = "card"> 
+                    <img src ="${ml.strMealThumb}" class=" meal-img"/>
+                    <h2> ${ml.strMeal}</h2>
+                   <h2> ${ml.strArea}</h2>
+
+                    
+                 </div>
+                    `
+               })
+
+                console.log(mealFrom)
+            } catch(err){
+                alert ("something went wrong")
+                console.log(err)
+            }
+            
+        }
+    </script>
+    
 </body>
 </html>
